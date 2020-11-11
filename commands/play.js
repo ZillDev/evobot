@@ -18,12 +18,12 @@ module.exports = {
   name: "play",
   cooldown: 3,
   aliases: ["p"],
-  description: "Plays audio from YouTube or Soundcloud",
+  description: "Youtube yada SoundCloud dan çal bişeyler uzatma mk",
   async execute(message, args) {
     const { channel } = message.member.voice;
 
     const serverQueue = message.client.queue.get(message.guild.id);
-    if (!channel) return message.reply("You need to join a voice channel first!").catch(console.error);
+    if (!channel) return message.reply("İlk önce kanala gir mal!").catch(console.error);
     if (serverQueue && channel !== message.guild.me.voice.channel)
       return message.reply(`You must be in the same channel as ${message.client.user}`).catch(console.error);
 
@@ -107,7 +107,7 @@ module.exports = {
     if (serverQueue) {
       serverQueue.songs.push(song);
       return serverQueue.textChannel
-        .send(`✅ **${song.title}** has been added to the queue by ${message.author}`)
+        .send(`✅ **${song.title}** ${message.author} tarafından sıraya eklendi ne ekledi bizde bilmiyok mk`)
         .catch(console.error);
     }
 

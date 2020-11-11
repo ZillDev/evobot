@@ -3,13 +3,13 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   name: "help",
   aliases: ["h"],
-  description: "Display all commands and descriptions",
+  description: "Tüm komutları ve açıklamaları göster",
   execute(message) {
     let commands = message.client.commands.array();
 
     let helpEmbed = new MessageEmbed()
-      .setTitle("Evobot Help")
-      .setDescription("List of all commands")
+      .setTitle("ZetM Bot")
+      .setDescription("Tüm komutları listele")
       .setColor("#F8AA2A");
 
     commands.forEach((cmd) => {
