@@ -25,7 +25,7 @@ module.exports = {
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!channel) return message.reply("İlk önce kanala gir mal!").catch(console.error);
     if (serverQueue && channel !== message.guild.me.voice.channel)
-      return message.reply(`You must be in the same channel as ${message.client.user}`).catch(console.error);
+      return message.reply(`${message.client.user} İle aynı kanalda olmalısınız`).catch(console.error);
 
     if (!args.length)
       return message
@@ -34,9 +34,9 @@ module.exports = {
 
     const permissions = channel.permissionsFor(message.client.user);
     if (!permissions.has("CONNECT"))
-      return message.reply("Cannot connect to voice channel, missing permissions");
+      return message.reply("Ses kanalına bağlanılamıyor, izinler eksik");
     if (!permissions.has("SPEAK"))
-      return message.reply("I cannot speak in this voice channel, make sure I have the proper permissions!");
+      return message.reply("Bu ses kanalında konuşamıyorum, uygun izinlere sahip olduğumdan emin olun!");
 
     const search = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
@@ -122,7 +122,7 @@ module.exports = {
       console.error(error);
       message.client.queue.delete(message.guild.id);
       await channel.leave();
-      return message.channel.send(`Could not join the channel: ${error}`).catch(console.error);
+      return message.channel.send(`Kanala katılamadı: ${error}`).catch(console.error);
     }
   }
 };

@@ -15,6 +15,6 @@ module.exports = {
     }
     queue.songs = songs;
     message.client.queue.set(message.guild.id, queue);
-    queue.textChannel.send(`${message.author} 🔀 shuffled the queue`).catch(console.error);
+    queue.textChannel.send(`${message.author} 🔀 sırayı karıştırdı`).catch(console.error);
   }
 };

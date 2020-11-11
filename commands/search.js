@@ -12,7 +12,7 @@ const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
 
 module.exports = {
   name: "search",
-  description: "Search and select videos to play",
+  description: "Oynatmak için videoları arayın ve seçin",
   async execute(message, args) {
     if (!args.length)
       return message
