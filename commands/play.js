@@ -29,7 +29,7 @@ module.exports = {
 
     if (!args.length)
       return message
-        .reply(`Usage: ${message.client.prefix}play <YouTube URL | Video Name | Soundcloud URL>`)
+        .reply(`Kullanım: ${message.client.prefix}play <YouTube URL | Video İsmi | Soundcloud URL>`)
         .catch(console.error);
 
     const permissions = channel.permissionsFor(message.client.user);
